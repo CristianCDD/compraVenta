@@ -13,12 +13,4 @@ class Conectar{
     }
 }
 
-$conexionP = new Conectar();
-$db = $conexionP->Conexion();
-
-if($db){
-    echo "Conexion exitosa";
-}else{
-    echo "Mala conexion";
-}
 ?>
