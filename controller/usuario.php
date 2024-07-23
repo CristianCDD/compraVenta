@@ -79,7 +79,7 @@ switch ($_GET["op"]) {
                 $output["usu_dni"] = $row["usu_dni"];
                 $output["usu_telf"] = $row["usu_telf"];
                 $output["usu_pass"] = $row["usu_pass"];
-                $output["rol_id"] = $row["rol_id"];
+                $output["rol_idgi"] = $row["rol_idgi"];
 
             
             }

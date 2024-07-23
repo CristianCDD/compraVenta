@@ -60,4 +60,18 @@ switch ($_GET["op"]) {
     case "eliminar":
             $empresa->delete_empresa($_POST["emp_id"]);
         break;
+    
+        case "combo":
+            $datos = $empresa->get_empresa_x_com_id($_POST["com_id"]);
+            if (is_array($datos) && count($datos) > 0) {
+                $html = "<option selected>Seleccionar</option>";
+                foreach ($datos as $row) {
+                    $html .= "<option value='" . $row['EMP_ID'] . "'>" . $row['EMP_NOM'] . "</option>";
+                }
+                echo $html;
+            } else {
+                echo "<option>No hay datos</option>"; // Agrega esto para verificar si realmente no hay datos
+            }
+            break;
+        
 }

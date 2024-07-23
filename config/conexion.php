@@ -1,4 +1,5 @@
 <?php 
+session_start();
 class Conectar{
     protected $dbh;
 
@@ -10,6 +11,10 @@ class Conectar{
             print "Error conexion BD: " . $e->getMessage() . "<br/>";
             die();
         }
+    }
+
+    public static function ruta(){
+        return "http://localhost/proyectos/compraVenta/";
     }
 }
 
