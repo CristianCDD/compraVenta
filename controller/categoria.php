@@ -36,7 +36,7 @@ switch ($_GET["op"]) {
 
         $results = array(
             "sEcho" => 1,
-            "iTotalRecord" => count($data),
+            "iTotalRecords" => count($data),
             "iTotalDisplayRecords" => count($data),
             "aaData" => $data
         );
