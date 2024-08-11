@@ -1,47 +1,44 @@
-function init(){
- $("#mantenimiento_form").on("submit", (e)=>{
-  guardaryeditar(e);
- })
+function init() {
+  $("#mantenimiento_form").on("submit", (e) => {
+    guardaryeditar(e);
+  });
 }
 
-function guardaryeditar(e){
+function guardaryeditar(e) {
   e.preventDefault();
-  console.log("Prevent")
- var formData = new FormData($("#mantenimiento_form")[0]);
+  console.log("Prevent");
+  var formData = new FormData($("#mantenimiento_form")[0]);
 
-formData.append("suc_id", $("#SUC_IDx").val());
+  formData.append("suc_id", $("#SUC_IDx").val());
   $.ajax({
     url: "../../controller/categoria.php?op=guardaryeditar",
     type: "POST",
     data: formData,
     contentType: false,
     processData: false,
-    success: function(data) {
+    success: function (data) {
       $("#table_data").DataTable().ajax.reload();
-    $("#modalmantenimiento").modal("hide")
+      $("#modalmantenimiento").modal("hide");
 
-    swal.fire({
-      title: "Categoria",
-      text: "Registro confirmado",
-      icon: "success"
-    })
+      swal.fire({
+        title: "Categoria",
+        text: "Registro confirmado",
+        icon: "success",
+      });
     },
-   
-  }); 
-  
-
+  });
 }
 
 $(document).ready(function () {
   $("#table_data").DataTable({
     aProcessing: true,
     aServerSide: true,
-    dom: 'Bfrtip',
-    buttons: ['copyHtml5', 'excelHtml5', 'csvHtml5'],
+    dom: "Bfrtip",
+    buttons: ["copyHtml5", "excelHtml5", "csvHtml5"],
     ajax: {
       url: "../../controller/categoria.php?op=listar",
       type: "POST",
-      data: {suc_id: 1}
+      data: { suc_id: 1 },
     },
     bDestroy: true,
     responsive: true,
@@ -53,7 +50,8 @@ $(document).ready(function () {
       sLengthMenu: "Mostrar _MENU_ registros",
       sZeroRecords: "No se encontraron resultados",
       sEmptyTable: "Ningún dato disponible en esta tabla",
-      sInfo: "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
+      sInfo:
+        "Mostrando registros del _START_ al _END_ de un total de _TOTAL_ registros",
       sInfoEmpty: "Mostrando registros del 0 al 0 de un total de 0 registros",
       sInfoFiltered: "(filtrado de un total de _MAX_ registros)",
       sInfoPostFix: "",
@@ -65,62 +63,72 @@ $(document).ready(function () {
         sFirst: "Primero",
         sLast: "Último",
         sNext: "Siguiente",
-        sPrevious: "Anterior"
+        sPrevious: "Anterior",
       },
       oAria: {
-        sSortAscending: ": Activar para ordenar la columna de manera ascendente",
-        sSortDescending: ": Activar para ordenar la columna de manera descendente"
-      }
-    }
+        sSortAscending:
+          ": Activar para ordenar la columna de manera ascendente",
+        sSortDescending:
+          ": Activar para ordenar la columna de manera descendente",
+      },
+    },
   });
 });
 
-function editar(cat_id){
-  $.post("../../controller/categoria.php?op=mostrar", {cat_id:cat_id},(data)=>{
-    data = JSON.parse(data);
-    $("#cat_id").val(data.CAT_ID);
-    $("#cat_nom").val(data.CAT_NOM);
-  });
+function editar(cat_id) {
+  $.post(
+    "../../controller/categoria.php?op=mostrar",
+    { cat_id: cat_id },
+    (data) => {
+      data = JSON.parse(data);
+      $("#cat_id").val(data.CAT_ID);
+      $("#cat_nom").val(data.CAT_NOM);
+    }
+  );
 
-  $('#lbltitulo').html("Editar registro");
-  $('#modalmantenimiento').modal("show");
+  $("#lbltitulo").html("Editar registro");
+  $("#modalmantenimiento").modal("show");
 }
 
-
-function eliminar(cat_id){
-  swal.fire({
-    title: "Eliminar",
-    text: "¿Desea eliminar el registro?",
-    icon: "error",
-    confirmButtonText: "Si",
-    showCancelButton: true,
-    cancelButtonText: "No",
-  }).then((result)=>{
-    if(result.value){
-        $.post("../../controller/categoria.php?op=eliminar", {cat_id:cat_id},(data)=>{
-          console.log(data)
-        })
+function eliminar(cat_id) {
+  swal
+    .fire({
+      title: "Eliminar",
+      text: "¿Desea eliminar el registro?",
+      icon: "error",
+      confirmButtonText: "Si",
+      showCancelButton: true,
+      cancelButtonText: "No",
+    })
+    .then((result) => {
+      if (result.value) {
+        $.post(
+          "../../controller/categoria.php?op=eliminar",
+          { cat_id: cat_id },
+          (data) => {
+            console.log(data);
+          }
+        );
 
         $("#table_data").DataTable().ajax.reload();
 
         swal.fire({
           title: "Categoria",
           text: "Registro eliminado",
-          icon: "success"
-        })
-    }
-  })
+          icon: "success",
+        });
+      }
+    });
 }
 
-$(document).on("click", "#btnnuevo", ()=>{
+$(document).on("click", "#btnnuevo", () => {
   $("#cat_id").val("");
   $("#cat_nom").val("");
   $("#lbltitulo").html("Nuevo Registro");
   $("#mantenimiento_form")[0].reset();
-  $("#modalmantenimiento").modal("show")
+  $("#modalmantenimiento").modal("show");
 
-
-  $("#modalmantenimiento").modal("show")
-})
+  $("#modalmantenimiento").modal("show");
+});
 
 init();
