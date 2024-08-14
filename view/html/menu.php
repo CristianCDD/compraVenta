@@ -35,58 +35,58 @@
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../home/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Dashboard</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Dashboard</span>
                       </a>
                   </li>
 
                   <li class="menu-title"><span data-key="t-menu">Mantenimiento</span></li>
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntCategoria/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. categoria</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. categoria</span>
                       </a>
                   </li>
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntProducto/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. producto</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. producto</span>
                       </a>
                   </li>
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntCliente/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. cliente</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. cliente</span>
                       </a>
                   </li>
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntProveedor/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. proveedor</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. proveedor</span>
                       </a>
                   </li>
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntMoneda/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. moneda</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. moneda</span>
                       </a>
                   </li>
 
 
                   <li class="nav-item">
-                      <a class="nav-link menu-link" href="../MntMoneda/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. undMedida</span>
+                      <a class="nav-link menu-link" href="../MntUndMedida/">
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. undMedida</span>
                       </a>
                   </li>
 
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntEmpresa/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. empresa</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. empresa</span>
                       </a>
                   </li>
 
                   <li class="nav-item">
                       <a class="nav-link menu-link" href="../MntSucursal/">
-                      <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. sucursal</span>
+                          <i class="ri-dashboard-2-line"></i> <span data-key="t-widgets">Mnt. sucursal</span>
                       </a>
                   </li>
 
